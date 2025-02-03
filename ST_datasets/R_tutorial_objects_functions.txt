@@ -50,7 +50,7 @@ WAY 1 : roll2 <- function(bones) {
   sum(dice)
 }
 
-Calling function roll2(bones=1:6)
+Calling function: roll2(bones=1:6)
 
 
 WAY 2: By giving bones argument a default value.
@@ -60,7 +60,7 @@ roll2 <- function(bones = 1:6) {
   sum(dice)
 }
 
-Now call function roll2()
+Calling function: roll2()
 
 
 
@@ -69,4 +69,4 @@ Now call function roll2()
 
 
 
-roll2(bones = 1:4)
+
