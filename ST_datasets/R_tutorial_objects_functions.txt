@@ -1,0 +1,72 @@
+## R code - copy and paste to try
+# Link: https://rstudio-education.github.io/hopr/basics.html#functions
+#
+
+# create an object and check panel on the right-hand side once you create an object
+# Data structure - vector
+1:6
+dice <- 1:6
+Sampling <- sample(dice, size = 2)
+
+Sample(dice, size = 2, replace = TRUE)
+
+
+#You can retype this code into the console anytime you want to re-roll your dice. However, this is an awkward way to work with the code. 
+
+die <- 1:6
+dice <- sample(die, size = 2, replace = TRUE)
+sum(dice)
+
+#################### Write a simple function named roll - easier to use your code if you wrapped it into its own function  ######################################
+
+roll <- function() {
+  die <- 1:6
+  dice <- sample(die, size = 2, replace = TRUE)
+  sum(dice)
+}
+
+
+## Calling a function  When you’re finished, the function will work like this: each time you call roll(), R will return the sum of rolling two dice:
+roll()
+
+
+##################### Ways to pass arguments or inputs to a function #######################################
+What if we removed one line of code from our function and changed the name die to bones, like this?
+
+roll2 <- function() {
+  dice <- sample(bones, size = 2, replace = TRUE)
+  sum(dice)
+}
+Now I’ll get an error when I run the function. The function needs the object bones to do its job, but there is no object named bones to be found:
+
+roll2()
+## Error in sample(bones, size = 2, replace = TRUE) : 
+##   object 'bones' not found
+
+#You can supply bones when you call roll2 if you make bones an argument of the function. To do this, put the name bones in the parentheses that follow function when you define roll2:
+
+WAY 1 : roll2 <- function(bones) {
+  dice <- sample(bones, size = 2, replace = TRUE)
+  sum(dice)
+}
+
+Calling function roll2(bones=1:6)
+
+
+WAY 2: By giving bones argument a default value.
+
+roll2 <- function(bones = 1:6) {
+  dice <- sample(bones, size = 2, replace = TRUE)
+  sum(dice)
+}
+
+Now call function roll2()
+
+
+
+
+
+
+
+
+roll2(bones = 1:4)
