@@ -1,4 +1,1 @@
-Exercise -
-
-Print file names
-Read file names
+For RNASeq Foundational Course - 2026
