@@ -1,1 +1,1 @@
-Counts file for all runs 
+Counts files for all samples
